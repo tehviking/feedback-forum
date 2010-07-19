@@ -12,7 +12,7 @@
 
 <p class="submitted_by"> 
   Submitted by: 
-  <span><%= @comment.user.email %></span>
+  <span><%= link_to @comment.user.email, @comment.user %></span>
 </p>
 
 <% if user_signed_in? %>

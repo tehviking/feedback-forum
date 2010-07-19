@@ -1,0 +1,8 @@
+<h2>Comments submitted by <%= @user.email %></h2> 
+<div id="comments_submitted">
+	<%= render :partial => @comments_submitted %> 
+</div>
+<h2>Comments voted for by <%= @user.email %></h2> 
+<div id="comments_voted_on">
+	<%= render :partial => @comments_voted_on %> 
+</div>

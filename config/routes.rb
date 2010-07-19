@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
   map.connect 'comments/popular', :controller => 'comments', :action => 'popular'
   map.resources :comments, :has_many => :votes
+  map.resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
 
