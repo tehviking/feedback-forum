@@ -1,0 +1,2583 @@
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to DeviseCreateUsers (20100715031232)
+  [4;35;1mSQL (3.7ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100715031232')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to DeviseCreateUsers (20100715031232)
+Migrating to AddUsernameToUsers (20100715044727)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "users" ADD "username" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100715044727')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 22:48:09) [GET]
+
+ActionController::MethodNotAllowed (Only post, put, and delete requests are allowed.):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (27.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (method_not_allowed)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 22:48:17) [GET]
+
+ActionController::RoutingError (No route matches "/users/new" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 22:51:07) [GET]
+
+ActionController::MethodNotAllowed (Only post, put, and delete requests are allowed.):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (105.6ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (method_not_allowed)
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-07-14 22:51:33) [GET]
+
+ActionController::UnknownAction (ActionController::UnknownAction):
+  devise (1.0.8) lib/devise/controllers/internal_helpers.rb:65:in `is_devise_resource?'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-07-15 22:32:38) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Rendered shared/_devise_links (3.7ms)
+Completed in 156ms (View: 135, DB: 0) | 200 OK [http://localhost/users/sign_up]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-15 22:34:53) [GET]
+
+ActionController::MethodNotAllowed (Only post, put, and delete requests are allowed.):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (32.8ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (method_not_allowed)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-07-15 22:34:58) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_devise_links (0.9ms)
+Completed in 30ms (View: 21, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-15 22:35:49) [GET]
+
+ActionController::RoutingError (No route matches "/users/registrations/new" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-07-15 22:35:58) [GET]
+
+ActionController::UnknownAction (ActionController::UnknownAction):
+  devise (1.0.8) lib/devise/controllers/internal_helpers.rb:65:in `is_devise_resource?'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-07-15 22:37:09) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Rendered shared/_devise_links (1.6ms)
+Completed in 119ms (View: 112, DB: 0) | 200 OK [http://localhost/users/sign_up]
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-07-15 22:49:20) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Rendered shared/_devise_links (0.7ms)
+Completed in 26ms (View: 16, DB: 0) | 200 OK [http://localhost/users/sign_up]
+
+
+Processing RegistrationsController#create (for 127.0.0.1 at 2010-07-15 22:49:33) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"Lz69X5CKj+bA/+bKFSsWWnblGiMHcPfLnZsylLcUFmM=", "user"=>{"password_confirmation"=>"", "password"=>"", "email"=>""}}
+Rendering template within layouts/application
+Rendering registrations/new
+Rendered shared/_devise_links (0.5ms)
+Completed in 26ms (View: 13, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-07-15 23:12:06) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Rendered shared/_devise_links (0.5ms)
+Completed in 36ms (View: 24, DB: 0) | 200 OK [http://localhost/users/sign_up]
+
+
+Processing RegistrationsController#create (for 127.0.0.1 at 2010-07-15 23:12:09) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"Lz69X5CKj+bA/+bKFSsWWnblGiMHcPfLnZsylLcUFmM=", "user"=>{"password_confirmation"=>"", "username"=>"", "password"=>"", "email"=>""}}
+Rendering template within layouts/application
+Rendering registrations/new
+Rendered shared/_devise_links (96.7ms)
+Completed in 123ms (View: 113, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-07-15 23:13:43) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Rendered shared/_devise_links (0.5ms)
+Completed in 26ms (View: 17, DB: 0) | 200 OK [http://localhost/users/sign_up]
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-07-15 23:14:57) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Rendered shared/_devise_links (0.6ms)
+Completed in 26ms (View: 17, DB: 0) | 200 OK [http://localhost/users/sign_up]
+
+
+Processing RegistrationsController#create (for 127.0.0.1 at 2010-07-15 23:15:21) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"Lz69X5CKj+bA/+bKFSsWWnblGiMHcPfLnZsylLcUFmM=", "user"=>{"password_confirmation"=>"48164816", "password"=>"48164816", "email"=>"brandon.hays@gmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'brandon.hays@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.7ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "created_at", "confirmation_sent_at", "last_sign_in_ip", "updated_at", "last_sign_in_at", "username", "sign_in_count", "password_salt", "reset_password_token", "remember_token", "current_sign_in_ip", "confirmation_token", "remember_created_at", "current_sign_in_at", "email", "confirmed_at") VALUES('03d140ad98c1c78d2e4b82dc4027527ef8d6f9db', '2010-07-16 05:15:21', NULL, NULL, '2010-07-16 05:15:21', NULL, NULL, 0, 'W1tr-ohqule_j0cIwPKH', NULL, NULL, NULL, NULL, NULL, NULL, 'brandon.hays@gmail.com', NULL)[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-07-16 05:15:21', "sign_in_count" = 1, "current_sign_in_at" = '2010-07-16 05:15:21', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-07-16 05:15:21', "last_sign_in_ip" = '127.0.0.1' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 47ms (DB: 1) | 302 Found [http://localhost/users]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to DeviseCreateUsers (20100715031232)
+Migrating to AddUsernameToUsers (20100715044727)
+Migrating to CreateComments (20100716052048)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100716052048')[0m
+Migrating to CreateVotes (20100716052141)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "comment_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100716052141')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("votes")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-15 23:43:05) [GET]
+
+NameError (uninitialized constant CommentsController):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (37.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-15 23:46:31) [GET]
+  [4;36;1mComment Load (0.9ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 35ms (View: 29, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-07-15 23:47:49) [GET]
+Rendering template within layouts/application
+Rendering comments/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 30ms (View: 22, DB: 0) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-07-15 23:47:51) [POST]
+  Parameters: {"comment"=>{"body"=>"", "title"=>""}, "commit"=>"Submit", "authenticity_token"=>"Lz69X5CKj+bA/+bKFSsWWnblGiMHcPfLnZsylLcUFmM="}
+
+NoMethodError (undefined method `comments' for nil:NilClass):
+  app/controllers/comments_controller.rb:15:in `create'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (38.3ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-07-15 23:50:40) [GET]
+Rendering template within layouts/application
+Rendering comments/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-07-15 23:50:42) [POST]
+  Parameters: {"comment"=>{"body"=>"", "title"=>""}, "commit"=>"Submit", "authenticity_token"=>"Lz69X5CKj+bA/+bKFSsWWnblGiMHcPfLnZsylLcUFmM="}
+Rendering template within layouts/application
+Rendering comments/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 30ms (View: 20, DB: 0) | 200 OK [http://localhost/comments]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-07-15 23:51:33) [POST]
+  Parameters: {"comment"=>{"body"=>"testing", "title"=>"test"}, "commit"=>"Submit", "authenticity_token"=>"Lz69X5CKj+bA/+bKFSsWWnblGiMHcPfLnZsylLcUFmM="}
+Rendering template within layouts/application
+Rendering comments/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 31ms (View: 18, DB: 0) | 200 OK [http://localhost/comments]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-07-15 23:51:45) [POST]
+  Parameters: {"comment"=>{"body"=>"", "title"=>""}, "commit"=>"Submit", "authenticity_token"=>"Lz69X5CKj+bA/+bKFSsWWnblGiMHcPfLnZsylLcUFmM="}
+Rendering template within layouts/application
+Rendering comments/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 32ms (View: 20, DB: 0) | 200 OK [http://localhost/comments]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-07-15 23:51:51) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Redirected to http://localhost:3000/
+Completed in 101ms (DB: 1) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-15 23:51:51) [GET]
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-07-15 23:52:17) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_devise_links (1.5ms)
+Completed in 33ms (View: 27, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-07-15 23:52:25) [POST]
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"Lz69X5CKj+bA/+bKFSsWWnblGiMHcPfLnZsylLcUFmM=", "user"=>{"remember_me"=>"1", "password"=>"48164816", "email"=>"brandon.hays@gmail.com"}}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'brandon.hays@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-07-16 05:52:25', "remember_token" = 'LOnGjklSGl6GxRrA9dvE', "remember_created_at" = '2010-07-16 05:52:25' WHERE "id" = 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-07-16 05:52:25', "sign_in_count" = 2, "current_sign_in_at" = '2010-07-16 05:52:25' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 38ms (DB: 2) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-15 23:52:25) [GET]
+  [4;35;1mComment Load (0.5ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-15 23:52:46) [GET]
+  [4;35;1mComment Load (0.6ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 114ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-07-15 23:53:40) [GET]
+Rendering template within layouts/application
+Rendering comments/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 23ms (View: 17, DB: 0) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-07-15 23:53:48) [POST]
+  Parameters: {"comment"=>{"body"=>"testing comments", "title"=>"Testing"}, "commit"=>"Submit", "authenticity_token"=>"Lz69X5CKj+bA/+bKFSsWWnblGiMHcPfLnZsylLcUFmM="}
+Rendering template within layouts/application
+Rendering comments/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 29ms (View: 19, DB: 0) | 200 OK [http://localhost/comments]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-07-15 23:56:23) [GET]
+Rendering template within layouts/application
+Rendering comments/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 32ms (View: 27, DB: 0) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-07-15 23:56:29) [POST]
+  Parameters: {"comment"=>{"body"=>"test comment", "title"=>"test"}, "commit"=>"Submit", "authenticity_token"=>"Lz69X5CKj+bA/+bKFSsWWnblGiMHcPfLnZsylLcUFmM="}
+  [4;36;1mComment Create (0.4ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "title", "body", "updated_at", "user_id") VALUES('2010-07-16 05:56:29', 'test', 'test comment', '2010-07-16 05:56:29', NULL)[0m
+Redirected to http://localhost:3000/comments/1
+Completed in 106ms (DB: 0) | 302 Found [http://localhost/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-15 23:56:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 25ms (View: 19, DB: 1) | 200 OK [http://localhost/comments/1]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "username" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "comment_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("schema_migrations")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100716052141')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100715031232')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100715044727')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100716052048')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "username" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "comment_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("schema_migrations")[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100716052141')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100715031232')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100715044727')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100716052048')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "username" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "comment_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("schema_migrations")[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100716052141')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100715031232')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100715044727')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100716052048')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "username" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "comment_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("schema_migrations")[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100716052141')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100715031232')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100715044727')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100716052048')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "username" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "comment_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("schema_migrations")[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100716052141')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100715031232')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100715044727')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100716052048')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "username" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "comment_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("schema_migrations")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100716052141')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100715031232')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100715044727')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100716052048')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "username" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "comment_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("schema_migrations")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100716052141')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100715031232')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100715044727')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100716052048')[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 11:38:26) [GET]
+  [4;36;1mComment Load (2.0ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+
+ActionView::TemplateError (undefined method `votes_count' for #<Comment:0x1033a6200>) on line #4 of app/views/comments/_comment.html.erb:
+1: <% # how do I set <td class="alt"></td> on every other row? %>
+2: <% div_for(comment) do %>
+3:   <tr>
+4: 	<td class='big'><%=h comment.votes_count %></td>
+5: 	<td><b><%=h comment.title %></b></td>
+6:     <td><%=h comment.body %></td>
+7:     <td class="alt"><%= link_to 'Show', comment %></td>
+
+    app/views/comments/_comment.html.erb:4
+    app/views/comments/_comment.html.erb:2
+    app/views/comments/index.html.erb:12
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (63.4ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 11:39:23) [GET]
+  [4;35;1mComment Load (0.5ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 1) [0m
+Rendered comments/_comment (20.8ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-07-18 17:39:23', "sign_in_count" = 3, "current_sign_in_at" = '2010-07-18 17:39:23', "last_sign_in_at" = '2010-07-16 05:52:25' WHERE "id" = 1[0m
+Completed in 52ms (View: 45, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 11:39:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 11:39:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+
+ActionView::TemplateError (undefined method `votes_count' for #<Comment:0x102dc1da8>) on line #3 of app/views/comments/show.html.erb:
+1: <h2>
+2:   <span id="vote_score"> 
+3: 	Score: <%= @comment.votes_count %>
+4:   </span>
+5:   <%=h @comment.title %>
+6: </h2>
+
+    app/views/comments/show.html.erb:3
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (123.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 11:39:53) [GET]
+  [4;36;1mComment Load (0.5ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 1) [0m
+Rendered comments/_comment (13.7ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 11:39:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 11:39:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+
+ActionView::TemplateError (undefined method `votes_count' for #<Comment:0x102d10530>) on line #3 of app/views/comments/show.html.erb:
+1: <h2>
+2:   <span id="vote_score"> 
+3: 	Score: <%= @comment.votes_count %>
+4:   </span>
+5:   <%=h @comment.title %>
+6: </h2>
+
+    app/views/comments/show.html.erb:3
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (135.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 11:40:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+
+ActionView::TemplateError (undefined method `votes_count' for #<Comment:0x10307c4f8>) on line #3 of app/views/comments/show.html.erb:
+1: <h2>
+2:   <span id="vote_score"> 
+3: 	Score: <%= @comment.votes_count %>
+4:   </span>
+5:   <%=h @comment.title %>
+6: </h2>
+
+    app/views/comments/show.html.erb:3
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (46.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 11:40:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 1) [0m
+
+ActionView::TemplateError (undefined method `user' for #<Comment:0x102a34ed8>) on line #15 of app/views/comments/show.html.erb:
+12: 
+13: <p>
+14:   <b>Submitted by:</b>
+15:   <%=h @comment.user.email %>
+16: </p>
+17: 
+18: <% if user_signed_in? %>
+
+    app/views/comments/show.html.erb:15
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (42.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 11:41:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/comments/1]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 11:41:54) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"1", "_"=>""}
+Rendering votes/create
+
+ActionView::TemplateError (undefined method `votes' for nil:NilClass) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'vote_score', "Score: #{@comment.votes.size}" 
+2: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (43.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 11:41:58) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"1", "_"=>""}
+Rendering votes/create
+
+ActionView::TemplateError (undefined method `votes' for nil:NilClass) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'vote_score', "Score: #{@comment.votes.size}" 
+2: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (129.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 11:41:59) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"1", "_"=>""}
+Rendering votes/create
+
+ActionView::TemplateError (undefined method `votes' for nil:NilClass) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'vote_score', "Score: #{@comment.votes.size}" 
+2: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 11:42:39) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"1", "_"=>""}
+Rendering votes/create
+
+ActionView::TemplateError (undefined method `votes' for nil:NilClass) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'vote_score', "Score: #{@comment.votes.size}" 
+2: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (125.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 11:42:43) [GET]
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 1) [0m
+Rendered comments/_comment (11.7ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 11:42:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 11:42:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 25ms (View: 17, DB: 2) | 200 OK [http://localhost/comments/1]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 11:42:48) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"1", "_"=>""}
+Rendering votes/create
+
+ActionView::TemplateError (undefined method `votes' for nil:NilClass) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'vote_score', "Score: #{@comment.votes.size}" 
+2: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#destroy (for 127.0.0.1 at 2010-07-18 11:43:28) [DELETE]
+  Parameters: {"authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "id"=>"1"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 1) [0m
+  [4;35;1mComment Destroy (0.3ms)[0m   [0mDELETE FROM "comments" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/comments
+Completed in 17ms (DB: 0) | 302 Found [http://localhost/comments/1]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 11:43:28) [GET]
+  [4;36;1mComment Load (0.5ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/comments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 11:43:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-07-18 11:43:31) [GET]
+Rendering template within layouts/application
+Rendering comments/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 29ms (View: 24, DB: 0) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-07-18 11:43:36) [POST]
+  Parameters: {"comment"=>{"body"=>"testing again", "title"=>"testing"}, "commit"=>"Submit", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA="}
+  [4;35;1mComment Create (0.4ms)[0m   [0mINSERT INTO "comments" ("created_at", "title", "body", "updated_at", "user_id") VALUES('2010-07-18 17:43:36', 'testing', 'testing again', '2010-07-18 17:43:36', NULL)[0m
+Redirected to http://localhost:3000/comments/2
+Completed in 18ms (DB: 0) | 302 Found [http://localhost/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 11:43:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 30ms (View: 22, DB: 1) | 200 OK [http://localhost/comments/2]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 11:43:38) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+Rendering votes/create
+
+ActionView::TemplateError (undefined method `votes' for nil:NilClass) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'vote_score', "Score: #{@comment.votes.size}" 
+2: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (44.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 13:07:38) [GET]
+  [4;36;1mComment Load (1.7ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+Rendered comments/_comment (15.1ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 64ms (View: 48, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 13:07:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 13:07:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 33ms (View: 25, DB: 1) | 200 OK [http://localhost/comments/2]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 13:07:42) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;35;1mVote Create (0.5ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 19:07:42', '2010-07-18 19:07:42', NULL, 2)[0m
+Rendering votes/create
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+Completed in 99ms (View: 6, DB: 1) | 200 OK [http://localhost/comments/2/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 13:07:49) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 19:07:49', '2010-07-18 19:07:49', NULL, 2)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://localhost/comments/2/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 13:07:51) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 19:07:51', '2010-07-18 19:07:51', NULL, 2)[0m
+Rendering votes/create
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+Completed in 15ms (View: 2, DB: 1) | 200 OK [http://localhost/comments/2/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 13:07:57) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 19:07:57', '2010-07-18 19:07:57', NULL, 2)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+Completed in 15ms (View: 2, DB: 1) | 200 OK [http://localhost/comments/2/votes]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 13:08:00) [GET]
+  [4;36;1mComment Load (0.5ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+Rendered comments/_comment (13.3ms)
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 105ms (View: 98, DB: 3) | 200 OK [http://localhost/comments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 13:08:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 13:08:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 2) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (5.4ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 41ms (View: 34, DB: 1) | 200 OK [http://localhost/comments/2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 13:09:52) [GET]
+  [4;36;1mComment Load (0.5ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+Rendered comments/_comment (12.2ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 13:09:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 13:09:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 2) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.2ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 116ms (View: 109, DB: 1) | 200 OK [http://localhost/comments/2]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 13:09:57) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 19:09:57', '2010-07-18 19:09:57', NULL, 2)[0m
+Rendering votes/create
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+
+ActionView::TemplateError (undefined method `votes' for nil:NilClass) on line #4 of app/views/votes/create.js.rjs:
+1: page.replace_html 'vote_score', "Score: #{@comment.votes.size}" 
+2: page[:vote_score].visual_effect :highlight
+3: page[:vote_history].replace_html :partial => 'vote',
+4:             :collection => @story.votes
+
+    app/views/votes/create.js.rjs:4:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:6:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (47.3ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 13:10:02) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 19:10:02', '2010-07-18 19:10:02', NULL, 2)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+
+ActionView::TemplateError (undefined method `votes' for nil:NilClass) on line #4 of app/views/votes/create.js.rjs:
+1: page.replace_html 'vote_score', "Score: #{@comment.votes.size}" 
+2: page[:vote_score].visual_effect :highlight
+3: page[:vote_history].replace_html :partial => 'vote',
+4:             :collection => @story.votes
+
+    app/views/votes/create.js.rjs:4:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:6:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (46.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 13:10:04) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 19:10:04', '2010-07-18 19:10:04', NULL, 2)[0m
+Rendering votes/create
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+
+ActionView::TemplateError (undefined method `votes' for nil:NilClass) on line #4 of app/views/votes/create.js.rjs:
+1: page.replace_html 'vote_score', "Score: #{@comment.votes.size}" 
+2: page[:vote_score].visual_effect :highlight
+3: page[:vote_history].replace_html :partial => 'vote',
+4:             :collection => @story.votes
+
+    app/views/votes/create.js.rjs:4:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:6:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (50.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 13:10:09) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 19:10:09', '2010-07-18 19:10:09', NULL, 2)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+
+ActionView::TemplateError (undefined method `votes' for nil:NilClass) on line #4 of app/views/votes/create.js.rjs:
+1: page.replace_html 'vote_score', "Score: #{@comment.votes.size}" 
+2: page[:vote_score].visual_effect :highlight
+3: page[:vote_history].replace_html :partial => 'vote',
+4:             :collection => @story.votes
+
+    app/views/votes/create.js.rjs:4:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:6:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (135.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 13:10:33) [GET]
+  [4;36;1mComment Load (0.5ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+Rendered comments/_comment (12.9ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 27ms (View: 21, DB: 1) | 200 OK [http://localhost/comments/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 13:10:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 13:10:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 2) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.1ms)
+Rendered votes/_vote (0.5ms)
+Rendered votes/_vote (0.1ms)
+Completed in 31ms (View: 23, DB: 1) | 200 OK [http://localhost/comments/2]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 13:10:38) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 19:10:39', '2010-07-18 19:10:39', NULL, 2)[0m
+Rendering votes/create
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+  [4;35;1mVote Load (0.4ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 2) [0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+Completed in 164ms (View: 13, DB: 1) | 200 OK [http://localhost/comments/2/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 13:10:41) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 19:10:41', '2010-07-18 19:10:41', NULL, 2)[0m
+Rendering votes/create
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 2) [0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 19ms (View: 6, DB: 1) | 200 OK [http://localhost/comments/2/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 13:11:07) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"2", "_"=>""}
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 19:11:07', '2010-07-18 19:11:07', NULL, 2)[0m
+Rendering votes/create
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 2) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.4ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 22ms (View: 7, DB: 1) | 200 OK [http://localhost/comments/2/votes]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to DeviseCreateUsers (20100715031232)
+Migrating to AddUsernameToUsers (20100715044727)
+Migrating to CreateComments (20100716052048)
+Migrating to CreateVotes (20100716052141)
+Migrating to AddStoriesToUser (20100718191531)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: stories: ALTER TABLE "stories" ADD "user_id" integer[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 14:09:06) [GET]
+  [4;36;1mComment Load (0.8ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 2) [0m
+Rendered comments/_comment (15.3ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 52ms (View: 41, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 14:09:07) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#destroy (for 127.0.0.1 at 2010-07-18 14:09:09) [DELETE]
+  Parameters: {"authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "id"=>"2"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 2) [0m
+  [4;36;1mComment Destroy (0.3ms)[0m   [0;1mDELETE FROM "comments" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/comments
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/comments/2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 14:09:09) [GET]
+  [4;35;1mComment Load (0.5ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 107ms (View: 100, DB: 1) | 200 OK [http://localhost/comments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 14:09:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-07-18 14:09:16) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mUser Update (0.9ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-07-18 20:09:16', "remember_token" = NULL, "remember_created_at" = NULL WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 22ms (DB: 2) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 14:09:16) [GET]
+  [4;36;1mComment Load (0.5ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 14:09:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-07-18 14:09:18) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 103ms (DB: 1) | 302 Found [http://localhost/comments/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-07-18 14:09:18) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_devise_links (1.7ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 44ms (View: 28, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-07-18 14:09:27) [POST]
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "user"=>{"remember_me"=>"0", "password"=>"48164816", "email"=>"brandon.hays@gmail.com"}}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'brandon.hays@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Update (1.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-07-18 20:09:27', "sign_in_count" = 4, "current_sign_in_at" = '2010-07-18 20:09:27', "last_sign_in_at" = '2010-07-18 17:39:23' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 33ms (DB: 2) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 14:09:27) [GET]
+  [4;35;1mComment Load (0.5ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 26ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 14:09:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-07-18 14:09:29) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering comments/new
+Completed in 31ms (View: 15, DB: 1) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-07-18 14:10:16) [POST]
+  Parameters: {"comment"=>{"body"=>"This website has a severe shortage of sparkly unicorns. Perhaps if they were jumping over a double rainbow? Thanks!", "title"=>"I want more unicorns"}, "commit"=>"Submit", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA="}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Create (0.4ms)[0m   [0mINSERT INTO "comments" ("created_at", "title", "body", "updated_at", "user_id") VALUES('2010-07-18 20:10:16', 'I want more unicorns', 'This website has a severe shortage of sparkly unicorns. Perhaps if they were jumping over a double rainbow? Thanks!', '2010-07-18 20:10:16', 1)[0m
+Redirected to http://localhost:3000/comments/3
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 14:10:16) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+
+ActionView::TemplateError (undefined method `user' for nil:NilClass) on line #15 of app/views/comments/show.html.erb:
+12: 
+13: <p class="submitted_by"> 
+14:   Submitted by: 
+15:   <span><%= @story.user.login %></span>
+16: </p>
+17: 
+18: <% if user_signed_in? %>
+
+    app/views/comments/show.html.erb:15
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (46.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 14:10:41) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `login' for #<ActiveRecord::Associations::BelongsToAssociation:0x102d922b0>) on line #15 of app/views/comments/show.html.erb:
+12: 
+13: <p class="submitted_by"> 
+14:   Submitted by: 
+15:   <span><%= @comment.user.login %></span>
+16: </p>
+17: 
+18: <% if user_signed_in? %>
+
+    app/views/comments/show.html.erb:15
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (138.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 14:10:56) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (3.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 39ms (View: 27, DB: 4) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 14:11:06) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"3", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 20:11:06', '2010-07-18 20:11:06', NULL, 3)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.7ms)
+Completed in 28ms (View: 12, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 14:11:07) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"3", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 20:11:07', '2010-07-18 20:11:07', NULL, 3)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.4ms)
+Rendered votes/_vote (0.2ms)
+Completed in 19ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 14:11:08) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"3", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 20:11:08', '2010-07-18 20:11:08', NULL, 3)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 19ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 14:11:09) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"3", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 20:11:09', '2010-07-18 20:11:09', NULL, 3)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Completed in 19ms (View: 3, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 14:11:10) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"3", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 20:11:10', '2010-07-18 20:11:10', NULL, 3)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 18ms (View: 3, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 14:11:11) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"3", "_"=>""}
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 20:11:11', '2010-07-18 20:11:11', NULL, 3)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 21ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 14:11:12) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"3", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 20:11:12', '2010-07-18 20:11:12', NULL, 3)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 22ms (View: 3, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 14:11:13) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"3", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 20:11:13', '2010-07-18 20:11:13', NULL, 3)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 19ms (View: 3, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 14:11:14) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"3", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 20:11:14', '2010-07-18 20:11:14', NULL, 3)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 114ms (View: 5, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 14:11:16) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"3", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 20:11:16', '2010-07-18 20:11:16', NULL, 3)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 19ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 14:11:34) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"3", "_"=>""}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-18 20:11:34', '2010-07-18 20:11:34', NULL, 3)[0m
+Rendering votes/create
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 18ms (View: 3, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to DeviseCreateUsers (20100715031232)
+Migrating to AddUsernameToUsers (20100715044727)
+Migrating to CreateComments (20100716052048)
+Migrating to CreateVotes (20100716052141)
+Migrating to AddStoriesToUser (20100718191531)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: stories: ALTER TABLE "stories" ADD "user_id" integer[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to DeviseCreateUsers (20100715031232)
+Migrating to AddUsernameToUsers (20100715044727)
+Migrating to CreateComments (20100716052048)
+Migrating to CreateVotes (20100716052141)
+Migrating to AddStoriesToUser (20100718191531)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: stories: ALTER TABLE "stories" ADD "user_id" integer[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to DeviseCreateUsers (20100715031232)
+Migrating to AddUsernameToUsers (20100715044727)
+Migrating to CreateComments (20100716052048)
+Migrating to CreateVotes (20100716052141)
+Migrating to AddStoriesToUser (20100718191531)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: duplicate column name: user_id: ALTER TABLE "comments" ADD "user_id" integer[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to DeviseCreateUsers (20100715031232)
+Migrating to AddUsernameToUsers (20100715044727)
+Migrating to CreateComments (20100716052048)
+Migrating to CreateVotes (20100716052141)
+Migrating to AddStoriesToUser (20100718191531)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: duplicate column name: user_id: ALTER TABLE "votes" ADD "user_id" integer[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to DeviseCreateUsers (20100715031232)
+Migrating to AddUsernameToUsers (20100715044727)
+Migrating to CreateComments (20100716052048)
+Migrating to CreateVotes (20100716052141)
+Migrating to AddCounterCacheToComments (20100719043354)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "comments" ADD "votes_count" integer DEFAULT 0[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" [0m
+  [4;35;1mVote Load (70.0ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) [0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2010-07-19 04:38:20', "votes_count" = 11 WHERE "id" = 3[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100719043354')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 22:46:08) [GET]
+
+SyntaxError (/Users/bhays/Sites/feedback_app/app/models/comment.rb:12: syntax error, unexpected $end, expecting kEND):
+  app/controllers/comments_controller.rb:5:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (70.8ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 22:46:34) [GET]
+  [4;36;1mComment Load (0.8ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (102.0ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 150ms (View: 134, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 22:46:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-07-18 22:46:40) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering comments/new
+Completed in 40ms (View: 21, DB: 1) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-07-18 22:47:12) [POST]
+  Parameters: {"comment"=>{"body"=>"I don't like any of this! What am I still doing here?", "title"=>"Whine Whine Whine"}, "commit"=>"Submit", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA="}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mComment Create (0.5ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "title", "body", "updated_at", "votes_count", "user_id") VALUES('2010-07-19 04:47:12', 'Whine Whine Whine', 'I don''t like any of this! What am I still doing here?', '2010-07-19 04:47:12', 0, 1)[0m
+Redirected to http://localhost:3000/comments/4
+Completed in 29ms (DB: 1) | 302 Found [http://localhost/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 22:47:12) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 128ms (View: 27, DB: 1) | 200 OK [http://localhost/comments/4]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:14) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"4", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 4) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:14', '2010-07-19 04:47:14', NULL, 4)[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 4) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 4) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 4) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 4) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (4.3ms)
+Completed in 32ms (View: 15, DB: 1) | 200 OK [http://localhost/comments/4/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:15) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"4", "_"=>""}
+  [4;36;1mComment Load (1.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 4) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:15', '2010-07-19 04:47:15', NULL, 4)[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 4) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 4) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 4) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 4) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.3ms)
+Completed in 28ms (View: 8, DB: 2) | 200 OK [http://localhost/comments/4/votes]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 22:47:17) [GET]
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (20.0ms)
+Rendered comments/_comment (3.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 42ms (View: 35, DB: 1) | 200 OK [http://localhost/comments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 22:47:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-07-18 22:47:19) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering comments/new
+Completed in 28ms (View: 12, DB: 1) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-07-18 22:47:51) [POST]
+  Parameters: {"comment"=>{"body"=>"I tried clearing all the cookies, but I've eaten over 2 dozen and now have a stomachache. Is that normal? What should I do next?", "title"=>"Cookie issue"}, "commit"=>"Submit", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA="}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mComment Create (0.4ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "title", "body", "updated_at", "votes_count", "user_id") VALUES('2010-07-19 04:47:52', 'Cookie issue', 'I tried clearing all the cookies, but I''ve eaten over 2 dozen and now have a stomachache. Is that normal? What should I do next?', '2010-07-19 04:47:52', 0, 1)[0m
+Redirected to http://localhost:3000/comments/5
+Completed in 113ms (DB: 1) | 302 Found [http://localhost/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 22:47:52) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 40ms (View: 32, DB: 1) | 200 OK [http://localhost/comments/5]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:55) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.5ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:55', '2010-07-19 04:47:55', NULL, 5)[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Completed in 20ms (View: 3, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:55) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.5ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:55', '2010-07-19 04:47:55', NULL, 5)[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Completed in 110ms (View: 8, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:56) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:56', '2010-07-19 04:47:56', NULL, 5)[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.9ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 31ms (View: 9, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:56) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:56', '2010-07-19 04:47:56', NULL, 5)[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 22ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:57) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:57', '2010-07-19 04:47:57', NULL, 5)[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 25ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:57) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:57', '2010-07-19 04:47:57', NULL, 5)[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.4ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 114ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:58) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:58', '2010-07-19 04:47:58', NULL, 5)[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 21ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:58) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:58', '2010-07-19 04:47:58', NULL, 5)[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 22ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:59) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:59', '2010-07-19 04:47:59', NULL, 5)[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.0ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 105ms (View: 8, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:47:59) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:47:59', '2010-07-19 04:47:59', NULL, 5)[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 23ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:48:00) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:48:00', '2010-07-19 04:48:00', NULL, 5)[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+Completed in 22ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:48:00) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (1.0ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:48:00', '2010-07-19 04:48:00', NULL, 5)[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 23ms (View: 4, DB: 2) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:48:01) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"5", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:48:01', '2010-07-19 04:48:01', NULL, 5)[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 5) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 100ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/5/votes]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 22:48:10) [GET]
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (16.9ms)
+Rendered comments/_comment (2.5ms)
+Rendered comments/_comment (2.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 36ms (View: 30, DB: 1) | 200 OK [http://localhost/comments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 22:48:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-07-18 22:48:26) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering comments/new
+Completed in 120ms (View: 11, DB: 1) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-07-18 22:48:48) [POST]
+  Parameters: {"comment"=>{"body"=>"I got food poisoning from licking a mop. Someone must pay for this injustice!", "title"=>"Bleh"}, "commit"=>"Submit", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA="}
+  [4;35;1mUser Load (2.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mComment Create (1.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "title", "body", "updated_at", "votes_count", "user_id") VALUES('2010-07-19 04:48:48', 'Bleh', 'I got food poisoning from licking a mop. Someone must pay for this injustice!', '2010-07-19 04:48:48', 0, 1)[0m
+Redirected to http://localhost:3000/comments/6
+Completed in 25ms (DB: 4) | 302 Found [http://localhost/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 22:48:48) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 38ms (View: 22, DB: 1) | 200 OK [http://localhost/comments/6]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-07-18 22:48:50) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "comment_id"=>"6", "_"=>""}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 6) [0m
+  [4;35;1mVote Create (0.7ms)[0m   [0mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-07-19 04:48:50', '2010-07-19 04:48:50', NULL, 6)[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 6) [0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 6) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 6) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 6) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Completed in 99ms (View: 4, DB: 2) | 200 OK [http://localhost/comments/6/votes]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 22:48:52) [GET]
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (16.1ms)
+Rendered comments/_comment (2.8ms)
+Rendered comments/_comment (2.7ms)
+Rendered comments/_comment (2.5ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 46ms (View: 39, DB: 1) | 200 OK [http://localhost/comments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 22:48:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 22:48:59) [GET]
+
+ActionController::RoutingError (No route matches "/popular" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#popular (for 127.0.0.1 at 2010-07-18 22:49:03) [GET]
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `popular' for #<Class:0x102d5ac48>):
+  app/controllers/comments_controller.rb:46:in `popular'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (124.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#popular (for 127.0.0.1 at 2010-07-18 22:50:19) [GET]
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `popular' for #<Class:0x1032307e0>):
+  app/controllers/comments_controller.rb:46:in `popular'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (35.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#popular (for 127.0.0.1 at 2010-07-18 22:50:41) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `popular' for #<Class:0x102c6e8c0>):
+  app/controllers/comments_controller.rb:46:in `popular'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (137.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#popular (for 127.0.0.1 at 2010-07-18 22:52:27) [GET]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `popular' for #<Class:0x10341b898>):
+  app/controllers/comments_controller.rb:46:in `popular'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (35.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#popular (for 127.0.0.1 at 2010-07-18 22:52:38) [GET]
+  [4;36;1mComment Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near ",": syntax error: SELECT * FROM "comments" WHERE (votes_count > 5, :limit 10) ORDER BY votes_count DESC[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT * FROM "comments" WHERE (votes_count > 5, :limit 10)  ORDER BY votes_count DESC):
+  app/models/comment.rb:11:in `popular'
+  app/controllers/comments_controller.rb:46:in `popular'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (45.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#popular (for 127.0.0.1 at 2010-07-18 22:53:10) [GET]
+  [4;35;1mComment Load (0.0ms)[0m   [0mSQLite3::SQLException: near ",": syntax error: SELECT * FROM "comments" WHERE (votes_count > 5, :limit => 10) ORDER BY votes_count DESC[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT * FROM "comments" WHERE (votes_count > 5, :limit => 10)  ORDER BY votes_count DESC):
+  app/models/comment.rb:11:in `popular'
+  app/controllers/comments_controller.rb:46:in `popular'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (43.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#popular (for 127.0.0.1 at 2010-07-18 22:53:51) [GET]
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM "comments" WHERE (votes_count > 5) ORDER BY votes_count DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering comments/popular
+Rendered comments/_comment (13.8ms)
+Rendered comments/_comment (2.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 123ms (View: 116, DB: 1) | 200 OK [http://localhost/comments/popular]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 22:53:51) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-07-18 22:54:35) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Redirected to http://localhost:3000/
+Completed in 21ms (DB: 1) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 22:54:35) [GET]
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (15.3ms)
+Rendered comments/_comment (2.5ms)
+Rendered comments/_comment (2.4ms)
+Rendered comments/_comment (2.7ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 46ms (View: 37, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 22:54:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 22:54:42) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #27 of app/views/comments/show.html.erb:
+24: <% else %>
+25: 	<p>
+26: 		<em>
+27: 			<%= link_to 'Please log in', new_session_path %>
+28: 			to vote for this feedback!
+29: 		</em>
+30: 	</p>
+
+    app/views/comments/show.html.erb:27:in `new_session_path'
+    app/views/comments/show.html.erb:27
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (49.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 22:55:19) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.6ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 128ms (View: 121, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-07-18 22:55:24) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_devise_links (1.5ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 33ms (View: 25, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-07-18 22:55:33) [POST]
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"gzP3r4gb9ZStl8iKRb/QOGVUDnmfTFtrEReqg7qpdWA=", "user"=>{"remember_me"=>"1", "password"=>"48164816", "email"=>"brandon.hays@gmail.com"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'brandon.hays@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-07-19 04:55:33', "remember_token" = '-RSmspk03Q4-aVqPAXvz', "remember_created_at" = '2010-07-19 04:55:33' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-07-19 04:55:33', "sign_in_count" = 5, "current_sign_in_at" = '2010-07-19 04:55:33', "last_sign_in_at" = '2010-07-18 20:09:27' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 41ms (DB: 2) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 22:55:33) [GET]
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (108.2ms)
+Rendered comments/_comment (2.6ms)
+Rendered comments/_comment (5.8ms)
+Rendered comments/_comment (2.5ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 137ms (View: 128, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 22:55:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 22:55:38) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.5ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 33ms (View: 26, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing CommentsController#popular (for 127.0.0.1 at 2010-07-18 22:55:55) [GET]
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" WHERE (votes_count > 5) ORDER BY votes_count DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering comments/popular
+Rendered comments/_comment (104.1ms)
+Rendered comments/_comment (2.7ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 125ms (View: 118, DB: 1) | 200 OK [http://localhost/comments/popular]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 22:55:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-07-18 22:55:59) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-07-19 04:55:59', "remember_token" = NULL, "remember_created_at" = NULL WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 21ms (DB: 2) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-07-18 22:55:59) [GET]
+  [4;35;1mComment Load (0.7ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (12.6ms)
+Rendered comments/_comment (4.6ms)
+Rendered comments/_comment (2.5ms)
+Rendered comments/_comment (2.3ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 45ms (View: 37, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-18 22:55:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 22:56:09) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mComment Load (2.5ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.6ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 34ms (View: 23, DB: 3) | 200 OK [http://localhost/comments/3]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-07-18 22:57:27) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (3.9ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 41ms (View: 30, DB: 1) | 200 OK [http://localhost/comments/3]

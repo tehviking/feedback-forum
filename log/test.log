@@ -1,0 +1,81 @@
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "title", "body", "updated_at", "user_id") VALUES('2010-07-16 06:04:11', 'what the', 'sweet mutha', '2010-07-16 06:04:11', NULL)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "title", "body", "updated_at", "user_id") VALUES('2010-07-16 06:04:39', 'what the', 'sweet mutha', '2010-07-16 06:04:39', NULL)[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "title", "body", "updated_at", "user_id") VALUES('2010-07-16 06:16:27', 'what the', 'sweet mutha', '2010-07-16 06:16:27', NULL)[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "title", "body", "updated_at", "user_id") VALUES('2010-07-16 06:19:45', 'what the', 'sweet mutha', '2010-07-16 06:19:45', NULL)[0m
+
+
+Processing CommentsController#create (for 0.0.0.0 at 2010-07-16 07:50:05) [POST]
+  Parameters: {"comment"=>{"title"=>"test comment", "body"=>"Read Me"}}
+  [4;36;1mComment Create (1.4ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "title", "body", "updated_at", "user_id") VALUES('2010-07-16 13:50:05', 'test comment', 'Read Me', '2010-07-16 13:50:05', NULL)[0m
+Redirected to http://test.host/comments/980190963
+Completed in 7ms (DB: 2) | 302 Found [http://test.host/comments?comment%5Bbody%5D=Read+Me&comment%5Btitle%5D=test+comment]
+
+
+Processing CommentsController#create (for 0.0.0.0 at 2010-07-16 07:50:05) [POST]
+  Parameters: {"comment"=>{"title"=>"test comment"}}
+Rendering template within layouts/application
+Rendering comments/new
+
+
+Processing CommentsController#index (for 0.0.0.0 at 2010-07-16 07:50:05) [GET]
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+
+
+Processing CommentsController#new (for 0.0.0.0 at 2010-07-16 07:50:05) [GET]
+Rendering template within layouts/application
+Rendering comments/new
+
+
+Processing CommentsController#new (for 0.0.0.0 at 2010-07-16 07:50:05) [GET]
+Rendering template within layouts/application
+Rendering comments/new

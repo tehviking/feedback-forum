@@ -1,0 +1,18 @@
+<h2> 
+	<%= "Showing #{ pluralize(@comments.size, 'comment') }" %>
+</h2> 
+
+
+<table id="mytable" cellspacing="0" summary="All feedback">
+  <tr>
+	<th scope="col" abbr="Votes">Votes</th>
+    <th scope="col" abbr="Title">Title</th>
+    <th scope="col" abbr="Comment">Comment</th>
+  </tr>
+<%= render :partial => 'comment', :collection => @comments %>
+</table>
+
+<br />
+
+<%= link_to 'Submit your feedback', new_comment_path %> | 
+<%= link_to 'Top feedback', '/comments/popular' %>

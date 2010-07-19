@@ -1,0 +1,44 @@
+<h2>
+  <span id="vote_score"> 
+	<%= @comment.votes.size %> votes
+  </span>
+  <%=h @comment.title %>
+</h2>
+
+<p>
+  <b>Comment:</b>
+  <%=h @comment.body %>
+</p>
+
+<p class="submitted_by"> 
+  Submitted by: 
+  <span><%= @comment.user.email %></span>
+</p>
+
+<% if user_signed_in? %>
+<div id="vote_form"> 
+	<% form_remote_tag :url => comment_votes_path(@comment) do %>
+		<%= submit_tag 'Vote for this feedback' %> 
+	<% end %>
+</div>
+<% else %>
+	<p>
+		<em>
+			<%= link_to 'Please log in', new_user_session_path %>
+			to vote for this feedback!
+		</em>
+	</p>
+<% end %>
+<ul id="vote_history"> 
+  <% if @comment.votes.empty? %>
+	<em>No votes yet!</em> 
+  <% else %>
+	<%= render :partial => 'votes/vote', 
+			   :collection => @comment.votes.latest %>
+	<%# end %>
+  <% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>
