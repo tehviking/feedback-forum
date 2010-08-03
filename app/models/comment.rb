@@ -7,20 +7,19 @@ class Comment < ActiveRecord::Base
       find :all, :order => 'id DESC', :limit => 3
     end
   end
-  
+# THIS SHOULD NOT BE HERE. Everything related to vote_count_by_user is duplicated in the Vote model.
   VOTE_LIMIT = 3
-    
+      
   def self.popular
     find :all, :order => 'votes_count DESC', :conditions => 'votes_count > 5', :limit => 10
   end
-  
-# GRRR GRRRR GRRR How do I pass in @comment.id and current_user?????
-  def vote_count_by_user(user_id, comment_id)
-    Vote.count(:conditions => ["user_id = ? AND comment_id = ?", user_id, comment_id])
+ 
+  def times_voted_by_user
+    Vote.count(:conditions => ["user_id = ? AND comment_id = ?", self.user.id, self.id])
   end
   
-  def is_votable_by_user?(user_id, comment_id)
-    if vote_count_by_user(user_id, comment_id) < VOTE_LIMIT
+  def user_can_vote?
+    if times_voted_by_user < VOTE_LIMIT
       return true
     else
       return false

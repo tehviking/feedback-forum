@@ -1,3 +1,5 @@
+page.replace_html 'errors', "You've reached your vote limit for this feedback." 
+page[:errors].visual_effect :highlight
 page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
 page[:vote_score].visual_effect :highlight
 page[:vote_history].replace_html :partial => 'vote',

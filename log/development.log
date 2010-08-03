@@ -4818,3 +4818,1931 @@ ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.
   warden (0.10.7) lib/warden/manager.rb:34:in `call'
 
 Rendering rescues/layout (not_found)
+  [4;36;1mVote Load (2.0ms)[0m   [0;1mSELECT * FROM "votes" LIMIT 1[0m
+  [4;35;1mVote Load (1.6ms)[0m   [0mSELECT * FROM "votes" [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."id" = 43) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."id" = 43) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."id" = 43) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 5) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."id" = 43) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such column: vote_id: SELECT count(*) AS count_all FROM "votes" WHERE (vote_id = 43 AND user_id = 1 AND comment_id = 5) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."id" = 43) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 5) [0m
+  [4;36;1mVote Load (0.5ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".user_id = 1) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."id" = 42) AND ("votes".user_id = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 4) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 4) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 4) [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."id" = 43) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 5) [0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-03 16:37:30) [GET]
+  [4;36;1mComment Load (1.0ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (10.7ms)
+Rendered comments/_comment (2.6ms)
+Rendered comments/_comment (2.5ms)
+Rendered comments/_comment (2.7ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 54ms (View: 46, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-03 16:37:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 16:37:33) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (5.0ms)
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+
+ActionView::TemplateError (undefined method `vote_count_by_user' for #<Comment:0x102a4ed88>) on line #40 of app/views/comments/show.html.erb:
+37: 			   :collection => @comment.votes.latest %>
+38:   <% end %>
+39: </ul>
+40: You've voted <%= @comment.vote_count_by_user(current_user.id, @comment.id) %> times for this.</br>
+41: <% if @comment.is_votable_by_user?(current_user.id, @comment.id)%>
+42: 	Go ahead and vote!
+43: <% else %>
+
+    app/views/comments/show.html.erb:40
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-03 16:43:17) [GET]
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (99.6ms)
+Rendered comments/_comment (2.7ms)
+Rendered comments/_comment (2.4ms)
+Rendered comments/_comment (2.3ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 122ms (View: 115, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-03 16:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 16:43:20) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.5ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.3ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 40ms (View: 31, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 16:43:24) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-08-03 22:43:24', '2010-08-03 22:43:24', 1, 3)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 3) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.2ms)
+Completed in 34ms (View: 8, DB: 2) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 16:43:26) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-08-03 22:43:26', '2010-08-03 22:43:26', 1, 3)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 3) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 29ms (View: 4, DB: 2) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-03 16:43:55) [GET]
+  [4;36;1mComment Load (1.0ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (11.1ms)
+Rendered comments/_comment (3.2ms)
+Rendered comments/_comment (2.7ms)
+Rendered comments/_comment (2.6ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 55ms (View: 47, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-03 16:43:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 16:43:57) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (4.8ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 120ms (View: 111, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 16:44:00) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("created_at", "updated_at", "user_id", "comment_id") VALUES('2010-08-03 22:44:00', '2010-08-03 22:44:00', 1, 3)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 3) [0m
+Rendering votes/create
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 35ms (View: 7, DB: 2) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-03 16:46:02) [GET]
+  [4;36;1mComment Load (0.9ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (11.1ms)
+Rendered comments/_comment (2.7ms)
+Rendered comments/_comment (2.7ms)
+Rendered comments/_comment (2.5ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 53ms (View: 44, DB: 1) | 200 OK [http://localhost/comments/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-03 16:46:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 16:46:10) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (4.9ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 120ms (View: 111, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 16:46:13) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 32ms (View: 8, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 16:46:14) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 102ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 16:46:16) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 26ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 16:46:31) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+Completed in 25ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-03 16:47:30) [GET]
+  [4;36;1mComment Load (0.9ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (10.9ms)
+Rendered comments/_comment (2.6ms)
+Rendered comments/_comment (2.6ms)
+Rendered comments/_comment (2.4ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 52ms (View: 44, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-03 16:47:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 16:47:32) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (5.1ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 123ms (View: 115, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 16:47:34) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.5ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 32ms (View: 8, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 16:47:35) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 102ms (View: 4, DB: 2) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 16:48:34) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.8ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 35ms (View: 26, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 16:48:36) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+Completed in 97ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 16:48:37) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 27ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:01:49) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (5.9ms)
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 52ms (View: 43, DB: 2) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:01:51) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 105ms (View: 8, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:01:55) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 28ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:01:56) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.4ms)
+Rendered votes/_vote (0.2ms)
+Completed in 102ms (View: 78, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:02:08) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.7ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.4ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 34ms (View: 27, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-03 17:04:52) [GET]
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (94.4ms)
+Rendered comments/_comment (2.5ms)
+Rendered comments/_comment (2.4ms)
+Rendered comments/_comment (2.6ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 126ms (View: 119, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-03 17:04:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:04:55) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.8ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 33ms (View: 26, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:04:57) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::VOTE_COUNT) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "You've already voted #{VOTE_COUNT} times for this." 
+2: page.visual_effect :highlight, "errors", :startcolor => "'#ff0000'", :endcolor => "'#aca2b6'" 
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (45.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:04:59) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::VOTE_COUNT) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "You've already voted #{VOTE_COUNT} times for this." 
+2: page.visual_effect :highlight, "errors", :startcolor => "'#ff0000'", :endcolor => "'#aca2b6'" 
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (43.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:05:00) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::VOTE_COUNT) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "You've already voted #{VOTE_COUNT} times for this." 
+2: page.visual_effect :highlight, "errors", :startcolor => "'#ff0000'", :endcolor => "'#aca2b6'" 
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (47.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:05:00) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::VOTE_COUNT) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "You've already voted #{VOTE_COUNT} times for this." 
+2: page.visual_effect :highlight, "errors", :startcolor => "'#ff0000'", :endcolor => "'#aca2b6'" 
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (47.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:05:01) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::VOTE_COUNT) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "You've already voted #{VOTE_COUNT} times for this." 
+2: page.visual_effect :highlight, "errors", :startcolor => "'#ff0000'", :endcolor => "'#aca2b6'" 
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (130.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:05:01) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::VOTE_COUNT) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "You've already voted #{VOTE_COUNT} times for this." 
+2: page.visual_effect :highlight, "errors", :startcolor => "'#ff0000'", :endcolor => "'#aca2b6'" 
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (131.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:05:16) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.4ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 33ms (View: 25, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:05:19) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.3ms)
+Completed in 108ms (View: 7, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:05:23) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.6ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 33ms (View: 25, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:05:24) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.4ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 106ms (View: 81, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:08:04) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.6ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 34ms (View: 26, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:08:05) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 29ms (View: 7, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:08:08) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 26ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:08:10) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.6ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 35ms (View: 27, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:08:11) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 102ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:08:46) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.5ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 33ms (View: 25, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:08:48) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.2ms)
+Completed in 104ms (View: 7, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:10:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.5ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 33ms (View: 25, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:10:41) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.4ms)
+Completed in 108ms (View: 85, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:10:44) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 27ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:10:45) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.2ms)
+Completed in 26ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:13:21) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.5ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 114ms (View: 106, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:13:22) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+ERROR: compiling _run_rjs_app47views47votes47create46js46rjs RAISED compile error
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected '(', expecting kEND
+...ors].visual_effect :highlight(:startcolor => "#ff0000", :end...
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ',', expecting kEND
+...ight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ')', expecting kEND
+...0000", :endcolor => "#aca2b6") 
+                              ^
+Function body:           def _run_rjs_app47views47votes47create46js46rjs(local_assigns)
+            old_output_buffer = output_buffer;;@template_format = :html;controller.response.content_type ||= Mime::JS;update_page do |page|;page.replace_html 'errors', "Oops!" 
+page[:errors].visual_effect :highlight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+page[:vote_score].visual_effect :highlight
+page[:vote_history].replace_html :partial => 'vote',
+            :collection => @comment.votes.latest
+end
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:10:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/bhays/Sites/feedback_app/app/controllers/votes_controller.rb:8:in `create'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected '(', expecting kEND
+...ors].visual_effect :highlight(:startcolor => "#ff0000", :end...
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ',', expecting kEND
+...ight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ')', expecting kEND
+...0000", :endcolor => "#aca2b6") 
+                              ^) on line #2 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "Oops!" 
+2: page[:errors].visual_effect :highlight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+5: page[:vote_history].replace_html :partial => 'vote',
+
+    app/views/votes/create.js.rjs:10:in `compile!'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (116.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:13:24) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+ERROR: compiling _run_rjs_app47views47votes47create46js46rjs RAISED compile error
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected '(', expecting kEND
+...ors].visual_effect :highlight(:startcolor => "#ff0000", :end...
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ',', expecting kEND
+...ight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ')', expecting kEND
+...0000", :endcolor => "#aca2b6") 
+                              ^
+Function body:           def _run_rjs_app47views47votes47create46js46rjs(local_assigns)
+            old_output_buffer = output_buffer;;@template_format = :html;controller.response.content_type ||= Mime::JS;update_page do |page|;page.replace_html 'errors', "Oops!" 
+page[:errors].visual_effect :highlight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+page[:vote_score].visual_effect :highlight
+page[:vote_history].replace_html :partial => 'vote',
+            :collection => @comment.votes.latest
+end
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:10:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/bhays/Sites/feedback_app/app/controllers/votes_controller.rb:8:in `create'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected '(', expecting kEND
+...ors].visual_effect :highlight(:startcolor => "#ff0000", :end...
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ',', expecting kEND
+...ight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ')', expecting kEND
+...0000", :endcolor => "#aca2b6") 
+                              ^) on line #2 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "Oops!" 
+2: page[:errors].visual_effect :highlight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+5: page[:vote_history].replace_html :partial => 'vote',
+
+    app/views/votes/create.js.rjs:10:in `compile!'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (39.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:13:25) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+ERROR: compiling _run_rjs_app47views47votes47create46js46rjs RAISED compile error
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected '(', expecting kEND
+...ors].visual_effect :highlight(:startcolor => "#ff0000", :end...
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ',', expecting kEND
+...ight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ')', expecting kEND
+...0000", :endcolor => "#aca2b6") 
+                              ^
+Function body:           def _run_rjs_app47views47votes47create46js46rjs(local_assigns)
+            old_output_buffer = output_buffer;;@template_format = :html;controller.response.content_type ||= Mime::JS;update_page do |page|;page.replace_html 'errors', "Oops!" 
+page[:errors].visual_effect :highlight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+page[:vote_score].visual_effect :highlight
+page[:vote_history].replace_html :partial => 'vote',
+            :collection => @comment.votes.latest
+end
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:10:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/bhays/Sites/feedback_app/app/controllers/votes_controller.rb:8:in `create'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected '(', expecting kEND
+...ors].visual_effect :highlight(:startcolor => "#ff0000", :end...
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ',', expecting kEND
+...ight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ')', expecting kEND
+...0000", :endcolor => "#aca2b6") 
+                              ^) on line #2 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "Oops!" 
+2: page[:errors].visual_effect :highlight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+5: page[:vote_history].replace_html :partial => 'vote',
+
+    app/views/votes/create.js.rjs:10:in `compile!'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (40.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:13:25) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+ERROR: compiling _run_rjs_app47views47votes47create46js46rjs RAISED compile error
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected '(', expecting kEND
+...ors].visual_effect :highlight(:startcolor => "#ff0000", :end...
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ',', expecting kEND
+...ight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ')', expecting kEND
+...0000", :endcolor => "#aca2b6") 
+                              ^
+Function body:           def _run_rjs_app47views47votes47create46js46rjs(local_assigns)
+            old_output_buffer = output_buffer;;@template_format = :html;controller.response.content_type ||= Mime::JS;update_page do |page|;page.replace_html 'errors', "Oops!" 
+page[:errors].visual_effect :highlight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+page[:vote_score].visual_effect :highlight
+page[:vote_history].replace_html :partial => 'vote',
+            :collection => @comment.votes.latest
+end
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:10:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/bhays/Sites/feedback_app/app/controllers/votes_controller.rb:8:in `create'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected '(', expecting kEND
+...ors].visual_effect :highlight(:startcolor => "#ff0000", :end...
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ',', expecting kEND
+...ight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ')', expecting kEND
+...0000", :endcolor => "#aca2b6") 
+                              ^) on line #2 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "Oops!" 
+2: page[:errors].visual_effect :highlight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+5: page[:vote_history].replace_html :partial => 'vote',
+
+    app/views/votes/create.js.rjs:10:in `compile!'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (41.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:13:26) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+ERROR: compiling _run_rjs_app47views47votes47create46js46rjs RAISED compile error
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected '(', expecting kEND
+...ors].visual_effect :highlight(:startcolor => "#ff0000", :end...
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ',', expecting kEND
+...ight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ')', expecting kEND
+...0000", :endcolor => "#aca2b6") 
+                              ^
+Function body:           def _run_rjs_app47views47votes47create46js46rjs(local_assigns)
+            old_output_buffer = output_buffer;;@template_format = :html;controller.response.content_type ||= Mime::JS;update_page do |page|;page.replace_html 'errors', "Oops!" 
+page[:errors].visual_effect :highlight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+page[:vote_score].visual_effect :highlight
+page[:vote_history].replace_html :partial => 'vote',
+            :collection => @comment.votes.latest
+end
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:10:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/bhays/Sites/feedback_app/app/controllers/votes_controller.rb:8:in `create'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+/Library/Ruby/Gems/1.8/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Users/bhays/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected '(', expecting kEND
+...ors].visual_effect :highlight(:startcolor => "#ff0000", :end...
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ',', expecting kEND
+...ight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+                              ^
+/Users/bhays/Sites/feedback_app/app/views/votes/create.js.rjs:2: syntax error, unexpected ')', expecting kEND
+...0000", :endcolor => "#aca2b6") 
+                              ^) on line #2 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "Oops!" 
+2: page[:errors].visual_effect :highlight(:startcolor => "#ff0000", :endcolor => "#aca2b6") 
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+5: page[:vote_history].replace_html :partial => 'vote',
+
+    app/views/votes/create.js.rjs:10:in `compile!'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (42.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:13:36) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 30ms (View: 7, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:14:11) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 113ms (View: 8, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:14:13) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 27ms (View: 4, DB: 2) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:14:17) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (77.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.5ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.5ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 110ms (View: 25, DB: 79) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:14:18) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 26ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:14:33) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.8ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 33ms (View: 26, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:14:34) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 31ms (View: 8, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:14:43) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 29ms (View: 7, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:15:09) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.7ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.1ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 114ms (View: 27, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:15:10) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::VOTE_COUNT) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "You've already voted #{VOTE_COUNT} times for this." 
+2: page[:errors].visual_effect :highlight
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (120.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:15:11) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::VOTE_COUNT) on line #1 of app/views/votes/create.js.rjs:
+1: page.replace_html 'errors', "You've already voted #{VOTE_COUNT} times for this." 
+2: page[:errors].visual_effect :highlight
+3: page.replace_html 'vote_score', "Score: #{@comment.reload.votes.size}" 
+4: page[:vote_score].visual_effect :highlight
+
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/views/votes/create.js.rjs:1:in `_run_rjs_app47views47votes47create46js46rjs'
+    app/controllers/votes_controller.rb:8:in `create'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (128.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-03 17:15:28) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.7ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Completed in 33ms (View: 26, DB: 1) | 200 OK [http://localhost/comments/3]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:15:29) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 106ms (View: 7, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:15:59) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.1ms)
+Completed in 31ms (View: 7, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:16:01) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+Completed in 27ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2010-08-03 17:16:03) [POST]
+  Parameters: {"commit"=>"Vote for this feedback", "authenticity_token"=>"Ky+V1h6E1LESSdx5H09fcyZowEH/qkn2tYqWEoB7nEk=", "comment_id"=>"3", "_"=>""}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = 1 AND comment_id = 3) [0m
+Rendering votes/create
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.1ms)
+Rendered votes/_vote (0.2ms)
+Completed in 28ms (View: 4, DB: 1) | 200 OK [http://localhost/comments/3/votes]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-03 17:16:13) [GET]
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (16.8ms)
+Rendered comments/_comment (2.6ms)
+Rendered comments/_comment (2.5ms)
+Rendered comments/_comment (2.5ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 40ms (View: 33, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-03 17:16:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)

@@ -1,3 +1,7 @@
+<span id="errors">
+  <%= error_messages_for "vote" %>
+</span>
+
 <h2>
   <span id="vote_score"> 
 	<%= @comment.votes.size %> votes
@@ -37,8 +41,8 @@
 			   :collection => @comment.votes.latest %>
   <% end %>
 </ul>
-You've voted <%= @comment.vote_count_by_user(current_user.id, @comment.id) %> times for this.</br>
-<% if @comment.is_votable_by_user?(current_user.id, @comment.id)%>
+You've voted <%= @comment.times_voted_by_user %> times for this.</br>
+<% if @comment.user_can_vote?%>
 	Go ahead and vote!
 <% else %>
 	Where do you think you're going? You can't vote again!
