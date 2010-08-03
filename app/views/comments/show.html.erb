@@ -35,10 +35,14 @@
   <% else %>
 	<%= render :partial => 'votes/vote', 
 			   :collection => @comment.votes.latest %>
-	<%# end %>
   <% end %>
 </ul>
+You've voted <%= @comment.vote_count_by_user(current_user.id, @comment.id) %> times for this.</br>
+<% if @comment.is_votable_by_user?(current_user.id, @comment.id)%>
+	Go ahead and vote!
+<% else %>
+	Where do you think you're going? You can't vote again!
+<% end %>
 
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Edit', edit_comment_path(@comment) %> 
 <%= link_to 'Back', comments_path %>

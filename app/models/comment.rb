@@ -8,8 +8,23 @@ class Comment < ActiveRecord::Base
     end
   end
   
+  VOTE_LIMIT = 3
+    
   def self.popular
     find :all, :order => 'votes_count DESC', :conditions => 'votes_count > 5', :limit => 10
+  end
+  
+# GRRR GRRRR GRRR How do I pass in @comment.id and current_user?????
+  def vote_count_by_user(user_id, comment_id)
+    Vote.count(:conditions => ["user_id = ? AND comment_id = ?", user_id, comment_id])
+  end
+  
+  def is_votable_by_user?(user_id, comment_id)
+    if vote_count_by_user(user_id, comment_id) < VOTE_LIMIT
+      return true
+    else
+      return false
+    end
   end
   
   protected

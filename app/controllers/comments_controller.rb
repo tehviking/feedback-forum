@@ -44,6 +44,6 @@ class CommentsController < ApplicationController
 
   def popular
     @popular = Comment.popular
-  end
+  end  
 
 end
