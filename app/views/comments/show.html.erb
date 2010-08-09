@@ -8,23 +8,23 @@
   </span>
   <%=h @comment.title %>
 </h2>
-
 <p>
-  <b>Comment:</b>
-  <%=h @comment.body %>
-</p>
+  <h3><%=h @comment.body %></h3>
+  
 
 <p class="submitted_by"> 
-  Submitted by: 
-  <span><%= link_to @comment.user.email, @comment.user %></span>
+  <em> 
+	Submitted by: 
+  	<span><%= link_to @comment.user.email, @comment.user %></span>
+  </em>
 </p>
 
 <% if user_signed_in? %>
-<div id="vote_form"> 
-	<% form_remote_tag :url => comment_votes_path(@comment) do %>
-		<%= submit_tag 'Vote for this feedback' %> 
-	<% end %>
-</div>
+	<div id="vote_form"> 
+		<% form_remote_tag :url => comment_votes_path(@comment) do %>
+			<%= submit_tag 'Vote for this feedback' %> 
+		<% end %>
+	</div>
 <% else %>
 	<p>
 		<em>
@@ -41,12 +41,30 @@
 			   :collection => @comment.votes.latest %>
   <% end %>
 </ul>
-You've voted <%= @comment.times_voted_by_user %> times for this.</br>
-<% if @comment.user_can_vote?%>
-	Go ahead and vote!
+
+<h2>Discuss this Feedback</h2>
+	<% if @comment.subcomments %>  
+		<% for subcomment in @comment.subcomments %>
+			<em><%= subcomment.user.email %> said:</em><br />
+		<h3><%= subcomment.body %></h3>
+		<hr />
+		<% end %>
+	<% else %>
+		No replies yet! 
+	<% end %>
+
+<% if current_user %>
+	<%= form_tag :action => "add_subcomment", :id => @comment %>
+	   <%= text_area "subcomment", "body" %><br />
+	   <%= submit_tag "Submit" %>
+	</form>
 <% else %>
-	Where do you think you're going? You can't vote again!
+	<em>
+		<%= link_to 'Log in', new_user_session_path %>
+		to reply to this feedback!
+	</em>
 <% end %>
 
+<br /><br />
 <%= link_to 'Edit', edit_comment_path(@comment) %> 
 <%= link_to 'Back', comments_path %>

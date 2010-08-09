@@ -44,6 +44,14 @@ class CommentsController < ApplicationController
 
   def popular
     @popular = Comment.popular
+  end
+  
+  def add_subcomment
+     @subcomment = Comment.find(params[:id]).subcomments.new(params[:subcomment])
+     @subcomment.user_id = current_user.id
+     @subcomment.save
+     flash[:notice] = "Thanks for your comment"
+     redirect_to :action => "show", :id => params[:id]
   end  
 
 end

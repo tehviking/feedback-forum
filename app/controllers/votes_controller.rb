@@ -4,6 +4,7 @@ class VotesController < ApplicationController
   def create
     @comment = Comment.find(params[:comment_id])
     @comment.votes.create(:user => current_user)
+    @comment.user.decrement_votes_left
     
     respond_to do |format| 
       format.html { redirect_to @story } 
