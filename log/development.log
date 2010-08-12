@@ -8652,3 +8652,236 @@ Rendered votes/_vote (0.2ms)
   [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
   [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
 Completed in 45ms (View: 35, DB: 2) | 200 OK [http://localhost/comments/3]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-12 00:29:21) [GET]
+  [4;36;1mComment Load (1.2ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+
+ActionView::TemplateError (wrong number of arguments (2 for 1)) on line #5 of app/views/comments/_comment.html.erb:
+2: <% div_for(comment) do %>
+3:   <tr>
+4: 	<td class='big'><%=h comment.votes.size %></td>
+5: 	<td><b><%= link_to h comment.title, comment %></b></td>
+6:     <td><%=h comment.body %></td>
+7:     <td class="alt"><%= link_to 'Show', comment %></td>
+8:     <td class="alt"><%= link_to 'Delete', comment_path(comment), :method => :delete %></td>
+
+    app/views/comments/_comment.html.erb:5:in `h'
+    app/views/comments/_comment.html.erb:5
+    app/views/comments/_comment.html.erb:2
+    app/views/comments/index.html.erb:12
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (131.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-12 00:29:38) [GET]
+  [4;35;1mComment Load (0.8ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (18.5ms)
+Rendered comments/_comment (2.8ms)
+Rendered comments/_comment (2.7ms)
+Rendered comments/_comment (2.9ms)
+Rendered comments/_comment (2.8ms)
+Rendered comments/_comment (2.6ms)
+Rendered comments/_comment (3.2ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Completed in 133ms (View: 126, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-12 00:29:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-12 00:29:48) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".comment_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (5.0ms)
+Rendered votes/_vote (0.3ms)
+Rendered votes/_vote (0.2ms)
+  [4;35;1mSubcomment Load (0.4ms)[0m   [0mSELECT * FROM "subcomments" WHERE ("subcomments".comment_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Completed in 54ms (View: 46, DB: 2) | 200 OK [http://localhost/comments/3]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-08-12 00:29:52) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes".comment_id = 5) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (1.5ms)
+Rendered votes/_vote (0.2ms)
+Rendered votes/_vote (0.2ms)
+  [4;36;1mSubcomment Load (0.2ms)[0m   [0;1mSELECT * FROM "subcomments" WHERE ("subcomments".comment_id = 5) [0m
+Completed in 120ms (View: 112, DB: 1) | 200 OK [http://localhost/comments/5]
+
+
+Processing CommentsController#popular (for 127.0.0.1 at 2010-08-12 00:30:05) [GET]
+  [4;35;1mComment Load (0.7ms)[0m   [0mSELECT * FROM "comments" WHERE (votes_count > 5) ORDER BY votes_count DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering comments/popular
+Rendered comments/_comment (15.9ms)
+Rendered comments/_comment (2.7ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Completed in 38ms (View: 30, DB: 1) | 200 OK [http://localhost/comments/popular]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-12 00:30:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-08-12 00:30:08) [GET]
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering comments/new
+Completed in 32ms (View: 16, DB: 1) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-12 00:33:24) [GET]
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (85.7ms)
+Rendered comments/_comment (2.8ms)
+Rendered comments/_comment (2.7ms)
+Rendered comments/_comment (2.6ms)
+Rendered comments/_comment (2.7ms)
+Rendered comments/_comment (2.5ms)
+Rendered comments/_comment (2.5ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Completed in 121ms (View: 114, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-12 00:33:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-12 00:33:55) [GET]
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (15.9ms)
+Rendered comments/_comment (2.7ms)
+Rendered comments/_comment (77.5ms)
+Rendered comments/_comment (2.9ms)
+Rendered comments/_comment (2.7ms)
+Rendered comments/_comment (2.5ms)
+Rendered comments/_comment (2.5ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Completed in 126ms (View: 119, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-12 00:33:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-12 00:34:01) [GET]
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (17.0ms)
+Rendered comments/_comment (2.7ms)
+Rendered comments/_comment (2.5ms)
+Rendered comments/_comment (2.5ms)
+Rendered comments/_comment (2.4ms)
+Rendered comments/_comment (2.4ms)
+Rendered comments/_comment (2.5ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Completed in 48ms (View: 41, DB: 1) | 200 OK [http://localhost/comments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-12 00:34:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-08-12 00:34:35) [GET]
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (7.7ms)
+Rendered comments/_comment (0.9ms)
+Rendered comments/_comment (0.8ms)
+Rendered comments/_comment (0.8ms)
+Rendered comments/_comment (0.8ms)
+Rendered comments/_comment (0.8ms)
+Rendered comments/_comment (0.7ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Completed in 41ms (View: 34, DB: 1) | 200 OK [http://localhost/comments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-12 00:34:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#popular (for 127.0.0.1 at 2010-08-12 00:35:04) [GET]
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" WHERE (votes_count > 5) ORDER BY votes_count DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering comments/popular
+Rendered comments/_comment (7.3ms)
+Rendered comments/_comment (0.9ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Completed in 109ms (View: 24, DB: 1) | 200 OK [http://localhost/comments/popular]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-12 00:35:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)

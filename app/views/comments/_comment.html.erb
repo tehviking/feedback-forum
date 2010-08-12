@@ -2,9 +2,7 @@
 <% div_for(comment) do %>
   <tr>
 	<td class='big'><%=h comment.votes.size %></td>
-	<td><b><%=h comment.title %></b></td>
+	<td><b><%= link_to (h comment.title), comment %></b></td>
     <td><%=h comment.body %></td>
-    <td class="alt"><%= link_to 'Show', comment %></td>
-    <td class="alt"><%= link_to 'Delete', comment_path(comment), :method => :delete %></td>
   </tr>
 <% end %>
